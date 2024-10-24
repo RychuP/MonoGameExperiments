@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended.Graphics;
 
-namespace MonoGameExperiments.Extended;
+namespace MonoGameExperiments.Extended.Graphics;
 
 internal class SpriteSample(Game game) : DrawableGameComponent(game)
 {

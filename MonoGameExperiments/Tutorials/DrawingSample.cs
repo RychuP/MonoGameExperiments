@@ -10,7 +10,6 @@ namespace MonoGameExperiments.Tutorials;
 /// </summary>
 internal class DrawingSample : DrawableGameComponent
 {
-    readonly GraphicsDeviceManager _graphics;
     SpriteBatch _spriteBatch;
 
     Texture2D _background;
@@ -38,6 +37,7 @@ internal class DrawingSample : DrawableGameComponent
     public DrawingSample(Game game) : base(game)
     {
         _screenArea = GraphicsDevice.Viewport.Bounds;
+        Game.Window.Title = "Test";
     }
 
     protected override void LoadContent()

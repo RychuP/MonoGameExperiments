@@ -6,7 +6,7 @@ using MonoGame.Extended.Graphics;
 using MonoGame.Extended.Input.InputListeners;
 using System;
 
-namespace MonoGameExperiments.Extended;
+namespace MonoGameExperiments.Extended.Graphics;
 
 internal class AnimatedSpriteSample(Game game) : DrawableGameComponent(game)
 {

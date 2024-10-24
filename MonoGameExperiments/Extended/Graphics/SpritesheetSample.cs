@@ -4,7 +4,7 @@ using MonoGame.Extended.Animations;
 using MonoGame.Extended.Graphics;
 using System;
 
-namespace MonoGameExperiments.Extended;
+namespace MonoGameExperiments.Extended.Graphics;
 
 internal class SpritesheetSample(Game game) : DrawableGameComponent(game)
 {
@@ -47,11 +47,11 @@ internal class SpritesheetSample(Game game) : DrawableGameComponent(game)
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
-        Texture2DRegion currentFrameTexture = 
+        Texture2DRegion currentFrameTexture =
             _spriteSheet.TextureAtlas[_attackAnimationController.CurrentFrame];
 
         _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
-        _spriteBatch.Draw(currentFrameTexture, Vector2.Zero, Color.White, 
+        _spriteBatch.Draw(currentFrameTexture, Vector2.Zero, Color.White,
             0.0f, Vector2.Zero, new Vector2(3), SpriteEffects.None, 0.0f);
         _spriteBatch.End();
     }

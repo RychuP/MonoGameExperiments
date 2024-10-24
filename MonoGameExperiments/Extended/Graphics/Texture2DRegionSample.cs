@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended.Graphics;
 
-namespace MonoGameExperiments.Extended;
+namespace MonoGameExperiments.Extended.Graphics;
 
 internal class Texture2DRegionSample(Game game) : DrawableGameComponent(game)
 {
