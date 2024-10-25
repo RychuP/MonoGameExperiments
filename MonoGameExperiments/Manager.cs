@@ -4,7 +4,9 @@ global using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended.BitmapFonts;
+using MonoGameExperiments.Extended.Collisions;
 using MonoGameExperiments.Extended.Input;
+using MonoGameExperiments.Extended.Tweening;
 
 namespace MonoGameExperiments;
 
@@ -13,12 +15,13 @@ public class Manager : Game
     public BitmapFont Font { get; private set; }
     public SpriteBatch SpriteBatch { get; private set; }
     public InputManager InputManager { get; private set; }
+    public Random Random { get; } = new();
 
     public Manager()
     {
         _ = new GraphicsDeviceManager(this);
         Content.RootDirectory = "Content";
-        Window.AllowUserResizing = true;
+        //Window.AllowUserResizing = true;
         IsMouseVisible = true;
     }
 
@@ -32,7 +35,7 @@ public class Manager : Game
         //Components.Add(new DrawingSample(this));
         //Components.Add(new SpriteSortingSample(this));
 
-        // -- extended experiments --
+        // -- monogame extended experiments --
         //Components.Add(new Texture2DRegionSample(this));
         //Components.Add(new Texture2DRegionSample(this));
         //Components.Add(new SpriteSample(this));
@@ -40,8 +43,12 @@ public class Manager : Game
         //Components.Add(new SpritesheetSample(this));
         //Components.Add(new AnimatedSpriteSample(this));
         //Components.Add(new BitmapFontSample(this));
-        Components.Add(new InputListenerSample(this));
+        //Components.Add(new InputListenerSample(this));
         //Components.Add(new MouseExtendedSample(this));
+        //Components.Add(new CameraSample(this));
+        //Components.Add(new ScreenManagementSample(this));
+        //Components.Add(new TweeningSample(this));
+        Components.Add(new ColisionsSample(this));
 
         base.Initialize();
     }

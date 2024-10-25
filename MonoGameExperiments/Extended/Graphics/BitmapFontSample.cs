@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended.BitmapFonts;
 
-namespace MonoGameExperiments.Extended;
+namespace MonoGameExperiments.Extended.Graphics;
 
 internal class BitmapFontSample(Game game) : DrawableGameComponent(game)
 {

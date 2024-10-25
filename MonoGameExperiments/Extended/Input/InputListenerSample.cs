@@ -22,8 +22,8 @@ internal class InputListenerSample(Manager manager) : MouseTester(manager)
     public override void Draw(GameTime gameTime)
     {
         base.Draw(gameTime);
-        var size = GraphicsDevice.Viewport.TitleSafeArea.Size;
         var sb = Manager.SpriteBatch;
+
         sb.Begin();
         sb.DrawString(Manager.Font, $"Pressed: {_text}", new Vector2(30), Color.Maroon);
         sb.DrawString(Manager.Font, $"Clicks: {_counter}", new Vector2(30, 90), Color.Black);
