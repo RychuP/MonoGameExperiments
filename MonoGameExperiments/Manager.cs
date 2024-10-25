@@ -56,8 +56,7 @@ public class Manager : Game
     protected override void LoadContent()
     {
         SpriteBatch = new(GraphicsDevice);
-        using var stream = TitleContainer.OpenStream("curlz.fnt");
-        Font = BitmapFont.FromStream(GraphicsDevice, stream, "curlz");
+        Font = BitmapFont.FromFile(GraphicsDevice, "Content/Fonts/curlz.fnt");
     }
 
     static void Main()
