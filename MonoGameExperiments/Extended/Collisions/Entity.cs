@@ -10,10 +10,10 @@ public class Entity : IEntity
     public IShapeF Bounds { get; }
     protected Manager Manager { get; }
 
-    public Entity(Manager manager, IShapeF shape, int velocityModifier)
+    public Entity(Manager manager, IShapeF shape)
     {
         Manager = manager;
-        _velocityModifier = velocityModifier;
+        _velocityModifier = manager.Random.Next(30, 60);
         Bounds = shape;
         RandomizeVelocity();
     }

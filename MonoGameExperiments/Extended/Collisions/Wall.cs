@@ -3,7 +3,7 @@ using MonoGame.Extended.Collisions;
 
 namespace MonoGameExperiments.Extended.Collisions;
 
-internal class Wall(Manager manager, RectangleF rectangleF) : Entity(manager, rectangleF, 0)
+internal class Wall(Manager manager, RectangleF rectangleF) : Entity(manager, rectangleF)
 {
     public override void Draw()
     {

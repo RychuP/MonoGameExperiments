@@ -1,9 +1,8 @@
-﻿using MonoGame.Extended.Collisions;
-using MonoGame.Extended;
+﻿using MonoGame.Extended;
 
 namespace MonoGameExperiments.Extended.Collisions;
 
-public class CubeEntity(Manager manager, RectangleF rectangleF) : Entity(manager, rectangleF, 50)
+public class CubeEntity(Manager manager, RectangleF rectangleF) : Entity(manager, rectangleF)
 {
     public override void Draw()
     {

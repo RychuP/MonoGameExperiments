@@ -1,9 +1,8 @@
-﻿using MonoGame.Extended.Collisions;
-using MonoGame.Extended;
+﻿using MonoGame.Extended;
 
 namespace MonoGameExperiments.Extended.Collisions;
 
-public class BallEntity(Manager manager, CircleF circleF) : Entity(manager, circleF, 30)
+public class BallEntity(Manager manager, CircleF circleF) : Entity(manager, circleF)
 {
     public override void Draw()
     {
