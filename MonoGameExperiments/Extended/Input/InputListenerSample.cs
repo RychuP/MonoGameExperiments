@@ -6,6 +6,7 @@ namespace MonoGameExperiments.Extended.Input;
 internal class InputListenerSample(Manager manager) : MouseTester(manager)
 {
     string _text = string.Empty;
+    int _counter;
 
     public override void Initialize()
     {
@@ -25,6 +26,7 @@ internal class InputListenerSample(Manager manager) : MouseTester(manager)
         var sb = Manager.SpriteBatch;
         sb.Begin();
         sb.DrawString(Manager.Font, $"Pressed: {_text}", new Vector2(30), Color.Maroon);
+        sb.DrawString(Manager.Font, $"Clicks: {_counter}", new Vector2(30, 90), Color.Black);
         sb.End();
     }
 
@@ -37,6 +39,7 @@ internal class InputListenerSample(Manager manager) : MouseTester(manager)
     {
         _text = $"Mouse {e.Button} Clicked";
         Shoot(e.Button);
+        _counter++;
     }
 
     void Mouse_OnMouseDown(object o, MouseEventArgs e)
