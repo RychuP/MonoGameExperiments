@@ -1,14 +1,11 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended.Graphics;
 
 namespace MonoGameExperiments.Extended.Graphics;
 
-internal class Texture2DAtlasSample(Game game) : DrawableGameComponent(game)
+internal class Texture2DAtlasSample(Manager manager) : DrawableGameComponent(manager)
 {
-    private SpriteBatch _spriteBatch;
     private Texture2DAtlas _atlas;
-
     private Texture2DRegion _aceOfClubs;
     private Texture2DRegion _aceOfDiamonds;
     private Texture2DRegion _aceOfHearts;
@@ -16,8 +13,6 @@ internal class Texture2DAtlasSample(Game game) : DrawableGameComponent(game)
 
     protected override void LoadContent()
     {
-        _spriteBatch = new(GraphicsDevice);
-
         Texture2D cardsTexture = Game.Content.Load<Texture2D>("Art/cards");
         _atlas = Texture2DAtlas.Create("Atlas/Cards", cardsTexture, 32, 32);
 
@@ -31,14 +26,14 @@ internal class Texture2DAtlasSample(Game game) : DrawableGameComponent(game)
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
 
-        _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+        manager.SpriteBatch.Begin(samplerState: SamplerState.PointClamp);
 
-        _spriteBatch.Draw(_aceOfClubs, new Vector2(336, 284), Color.White);
-        _spriteBatch.Draw(_aceOfDiamonds, new Vector2(368, 284), Color.White);
-        _spriteBatch.Draw(_aceOfHearts, new Vector2(400, 284), Color.White);
-        _spriteBatch.Draw(_aceOfSpades, new Vector2(432, 284), Color.White);
+        manager.SpriteBatch.Draw(_aceOfClubs, new Vector2(336, 284), Color.White);
+        manager.SpriteBatch.Draw(_aceOfDiamonds, new Vector2(368, 284), Color.White);
+        manager.SpriteBatch.Draw(_aceOfHearts, new Vector2(400, 284), Color.White);
+        manager.SpriteBatch.Draw(_aceOfSpades, new Vector2(432, 284), Color.White);
 
-        _spriteBatch.End();
+        manager.SpriteBatch.End();
 
         base.Draw(gameTime);
     }

@@ -1,21 +1,16 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
 using MonoGame.Extended.Animations;
 using MonoGame.Extended.Graphics;
-using System;
 
 namespace MonoGameExperiments.Extended.Graphics;
 
-internal class SpritesheetSample(Game game) : DrawableGameComponent(game)
+internal class SpritesheetSample(Manager manager) : DrawableGameComponent(manager)
 {
-    private SpriteBatch _spriteBatch;
     private SpriteSheet _spriteSheet;
     private AnimationController _attackAnimationController;
 
     protected override void LoadContent()
     {
-        _spriteBatch = new(GraphicsDevice);
-
         Texture2D adventurerTexture = Game.Content.Load<Texture2D>("Art/adventurer");
         Texture2DAtlas atlas = Texture2DAtlas.Create("Atlas/adventurer", adventurerTexture, 50, 37);
         _spriteSheet = new SpriteSheet("SpriteSheet/adventurer", atlas);
@@ -50,9 +45,9 @@ internal class SpritesheetSample(Game game) : DrawableGameComponent(game)
         Texture2DRegion currentFrameTexture =
             _spriteSheet.TextureAtlas[_attackAnimationController.CurrentFrame];
 
-        _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
-        _spriteBatch.Draw(currentFrameTexture, Vector2.Zero, Color.White,
+        manager.SpriteBatch.Begin(samplerState: SamplerState.PointClamp);
+        manager.SpriteBatch.Draw(currentFrameTexture, Vector2.Zero, Color.White,
             0.0f, Vector2.Zero, new Vector2(3), SpriteEffects.None, 0.0f);
-        _spriteBatch.End();
+        manager.SpriteBatch.End();
     }
 }

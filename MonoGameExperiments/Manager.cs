@@ -5,13 +5,17 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended.BitmapFonts;
 using MonoGameExperiments.Extended.Collisions;
+using MonoGameExperiments.Extended.Graphics;
 using MonoGameExperiments.Extended.Input;
+using MonoGameExperiments.Extended.Screen;
 using MonoGameExperiments.Extended.Tweening;
+using MonoGameExperiments.SpriteSorting;
 
 namespace MonoGameExperiments;
 
 public class Manager : Game
 {
+    public SpriteFont Arial { get; private set; }
     public BitmapFont Font { get; private set; }
     public SpriteBatch SpriteBatch { get; private set; }
     public InputManager InputManager { get; private set; }
@@ -57,6 +61,7 @@ public class Manager : Game
     {
         SpriteBatch = new(GraphicsDevice);
         Font = BitmapFont.FromFile(GraphicsDevice, "Content/Fonts/curlz.fnt");
+        Arial = Content.Load<SpriteFont>("Fonts/Arial");
     }
 
     static void Main()

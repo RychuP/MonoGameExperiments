@@ -1,5 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
 
 namespace MonoGameExperiments.SpriteSorting;
 
@@ -7,17 +6,20 @@ internal class Sprite : DrawableGameComponent
 {
     readonly SpriteSortingSample _parent;
     readonly string _textureName;
-    readonly int _layer;
+    readonly float _layer;
+    readonly int _offsetX;
     Texture2D _texture;
+    Manager Manager => Game as Manager;
 
     string Name => $"{_textureName[0]}".ToUpper() + _textureName[1..];
 
-    public Sprite(string textureName, int drawOrder, int layer, SpriteSortingSample parent) 
+    public Sprite(string textureName, int drawOrder, float layer, int offsetX, SpriteSortingSample parent) 
         : base(parent.Game)
     {
         _textureName = textureName;
         _parent = parent;
         _layer = layer;
+        _offsetX = offsetX;
         DrawOrder = drawOrder;
         Game.Components.Add(this);
     }
@@ -34,10 +36,8 @@ internal class Sprite : DrawableGameComponent
 
     public override void Draw(GameTime gameTime)
     {
-        _parent.SpriteBatch.Begin(_parent.SortMode);
-        _parent.SpriteBatch.Draw(_texture, _parent.GetCenteredPosition(_texture),
+        Manager.SpriteBatch.Draw(_texture, _parent.GetCenteredPosition(_texture) + Vector2.UnitX * _offsetX,
             _texture.Bounds, Color.White, 0, Vector2.Zero, 1.3f, SpriteEffects.None, _layer);
         //_parent.SpriteBatch.Draw(_texture, _parent.GetCenteredPosition(_texture), Color.White);
-        _parent.SpriteBatch.End();
     }
 }

@@ -4,9 +4,9 @@ namespace MonoGameExperiments.Extended.Input;
 
 class Bullet : DrawableGameComponent
 {
-    Texture2D _texture;
+    readonly Texture2D _texture;
+    readonly TimeSpan _duration = TimeSpan.FromSeconds(2f);
     Manager Manager => Game as Manager;
-    TimeSpan _duration = TimeSpan.FromSeconds(2f);
 
     Vector2 _start;
     Vector2 _destination;

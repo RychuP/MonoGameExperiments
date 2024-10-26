@@ -36,10 +36,12 @@ internal class CameraSample(Manager manager) : DrawableGameComponent(manager)
         var sb = Manager.SpriteBatch;
         var transformMatrix = _camera.GetViewMatrix();
         
+        // draw world
         sb.Begin(transformMatrix: transformMatrix);
         sb.DrawRectangle(new RectangleF(250, 250, 50, 50), Color.Black, 1f);
         sb.End();
 
+        // draw overlay
         sb.Begin();
         sb.DrawString(Manager.Font, $"Screen Position: {_screenPosition.X}, {_screenPosition.Y}", 
             new Vector2(30), Color.Maroon);
@@ -83,7 +85,7 @@ internal class CameraSample(Manager manager) : DrawableGameComponent(manager)
         }
     }
 
-    private Vector2 GetMovementDirection()
+    static private Vector2 GetMovementDirection()
     {
         var movementDirection = Vector2.Zero;
         var state = Keyboard.GetState();
@@ -91,7 +93,7 @@ internal class CameraSample(Manager manager) : DrawableGameComponent(manager)
         {
             movementDirection += Vector2.UnitY;
         }
-        if (state.IsKeyDown(Keys.Up))
+        else if (state.IsKeyDown(Keys.Up))
         {
             movementDirection -= Vector2.UnitY;
         }
@@ -99,7 +101,7 @@ internal class CameraSample(Manager manager) : DrawableGameComponent(manager)
         {
             movementDirection -= Vector2.UnitX;
         }
-        if (state.IsKeyDown(Keys.Right))
+        else if (state.IsKeyDown(Keys.Right))
         {
             movementDirection += Vector2.UnitX;
         }
