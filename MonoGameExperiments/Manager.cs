@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoGame.Extended.BitmapFonts;
 using MonoGameExperiments.Extended.Collisions;
+using MonoGameExperiments.Extended.Entities.Rain;
 using MonoGameExperiments.Extended.Graphics;
 using MonoGameExperiments.Extended.Input;
 using MonoGameExperiments.Extended.Screen;
@@ -52,7 +53,8 @@ public class Manager : Game
         //Components.Add(new CameraSample(this));
         //Components.Add(new ScreenManagementSample(this));
         //Components.Add(new TweeningSample(this));
-        Components.Add(new ColisionsSample(this));
+        //Components.Add(new ColisionsSample(this));
+        Components.Add(new RainSimulator(this));
 
         base.Initialize();
     }
