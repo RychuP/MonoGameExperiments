@@ -60,11 +60,11 @@ namespace MonoGameExperiments.GumUI.Components
                     {
                         case ButtonElevationState.Raised:
                             this.Side.Height = 5f;
-                            this.Y = 0f;
+                            this.Y -= 4;
                             break;
                         case ButtonElevationState.Lowered:
                             this.Side.Height = 1f;
-                            this.Y = 4f;
+                            this.Y += 4;
                             break;
                     }
                 }

@@ -15,7 +15,7 @@ partial class ButtonRuntime : ContainerRuntime
     void ChangeButtonElevation(ButtonElevationState state)
     {
         ButtonElevationStateState = state;
-        Y += 180;
+        //Y += 180;
     }
 
     public void LowerButtonDown() => ChangeButtonElevation(ButtonElevationState.Lowered);
