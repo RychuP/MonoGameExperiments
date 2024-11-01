@@ -1,7 +1,7 @@
 //Code for TestScreen
 using Gum.Converters;
-using MonoGameExperiments.GumUI.Components;
 using MonoGameGum.GueDeriving;
+using MonoGameExperiments.GumUI.Components;
 
 namespace MonoGameExperiments.GumUI.Screens
 {
@@ -56,8 +56,10 @@ namespace MonoGameExperiments.GumUI.Screens
             this.Background.YUnits = GeneralUnitType.PixelsFromMiddle;
 
             this.ButtonInstance.Text = "Test Button";
-            this.ButtonInstance.X = 260.6667f;
-            this.ButtonInstance.Y = 114f;
+            this.ButtonInstance.X = 70f;
+            this.ButtonInstance.XUnits = GeneralUnitType.Percentage;
+            this.ButtonInstance.Y = 10f;
+            this.ButtonInstance.YUnits = GeneralUnitType.Percentage;
 
         }
         partial void CustomInitialize();

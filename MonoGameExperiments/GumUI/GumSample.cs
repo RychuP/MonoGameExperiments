@@ -4,6 +4,7 @@ using MonoGameGum.GueDeriving;
 using RenderingLibrary;
 using MonoGameExperiments.GumUI.Components;
 using System.Text;
+using MonoGameExperiments.GumUI.Screens;
 
 namespace MonoGameExperiments.GumUI;
 
@@ -23,7 +24,7 @@ internal class GumSample(Manager manager) : DrawableGameComponent(manager)
         SystemManagers.Default.Initialize(Game.GraphicsDevice, fullInstantiation: true);
         FormsUtilities.InitializeDefaults();
 
-        Root = new ContainerRuntime
+        Root = new TestScreenRuntime
         {
             Width = 0,
             Height = 0,
@@ -73,7 +74,6 @@ internal class GumSample(Manager manager) : DrawableGameComponent(manager)
 
     public override void Draw(GameTime gameTime)
     {
-        GraphicsDevice.Clear(Color.CornflowerBlue);
         SystemManagers.Default.Draw();
         manager.SpriteBatch.Begin();
         var text = new StringBuilder();

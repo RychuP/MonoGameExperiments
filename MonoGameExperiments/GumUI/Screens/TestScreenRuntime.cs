@@ -7,7 +7,8 @@ namespace MonoGameExperiments.GumUI.Screens
     {
         partial void CustomInitialize()
         {
-        
+            Children.Add(Background);
+            Children.Add(ButtonInstance);
         }
     }
 }
