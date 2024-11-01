@@ -9,6 +9,8 @@ namespace MonoGameExperiments.GumUI.Components
         public ColoredRectangleRuntime TextColorRect { get; protected set; }
         public ColoredRectangleRuntime TextColor { get; protected set; }
         public TextRuntime TextColorDesc { get; protected set; }
+        public ContainerRuntime HighlightColor { get; protected set; }
+        public ColoredRectangleRuntime ColoredRectangleInstance { get; protected set; }
 
         public StylesRuntime(bool fullInstantiation = true)
         {
@@ -57,12 +59,18 @@ namespace MonoGameExperiments.GumUI.Components
             TextColor.Name = "TextColor";
             TextColorDesc = new TextRuntime();
             TextColorDesc.Name = "TextColorDesc";
+            HighlightColor = new ContainerRuntime();
+            HighlightColor.Name = "HighlightColor";
+            ColoredRectangleInstance = new ColoredRectangleRuntime();
+            ColoredRectangleInstance.Name = "ColoredRectangleInstance";
         }
         protected virtual void AssignParents()
         {
             TextColor.Children.Add(TextColorRect);
             this.Children.Add(TextColor);
             TextColor.Children.Add(TextColorDesc);
+            this.Children.Add(HighlightColor);
+            this.Children.Add(ColoredRectangleInstance);
         }
         private void ApplyDefaultVariables()
         {
@@ -90,6 +98,8 @@ namespace MonoGameExperiments.GumUI.Components
             this.TextColorDesc.Width = 4f;
             this.TextColorDesc.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToChildren;
             this.TextColorDesc.X = 4f;
+
+
 
         }
         partial void CustomInitialize();

@@ -51,7 +51,7 @@ namespace MonoGameExperiments.GumUI.Components
 
             this.BottomRect.Blue = 148;
             this.BottomRect.Green = 234;
-            this.BottomRect.Height = 27f;
+            this.BottomRect.Height = 43f;
             this.BottomRect.Red = 67;
             this.BottomRect.Width = 0f;
             this.BottomRect.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToContainer;
@@ -69,7 +69,7 @@ namespace MonoGameExperiments.GumUI.Components
             this.Content.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToChildren;
             this.Content.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
             this.Content.XUnits = GeneralUnitType.PixelsFromMiddle;
-            this.Content.Y = 27f;
+            this.Content.Y = 43f;
 
         }
         partial void CustomInitialize();

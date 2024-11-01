@@ -5,6 +5,21 @@
   <State>
     <Name>Default</Name>
     <Variable>
+      <Type>ButtonElevationState</Type>
+      <Name>ButtonElevationStateState</Name>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>ButtonSideVisibility</Type>
+      <Name>ButtonSideVisibilityState</Name>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>ButtonTopColors</Type>
+      <Name>ButtonTopColorsState</Name>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>int</Type>
       <Name>Description.Blue</Name>
       <Value xsi:type="xsd:int">37</Value>
@@ -353,13 +368,13 @@
     <Variable>
       <Type>int</Type>
       <Name>SideColor.Blue</Name>
-      <Value xsi:type="xsd:int">215</Value>
+      <Value xsi:type="xsd:int">175</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>SideColor.Green</Name>
-      <Value xsi:type="xsd:int">215</Value>
+      <Value xsi:type="xsd:int">175</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -383,7 +398,7 @@
     <Variable>
       <Type>int</Type>
       <Name>SideColor.Red</Name>
-      <Value xsi:type="xsd:int">215</Value>
+      <Value xsi:type="xsd:int">175</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -645,26 +660,53 @@
     </VariableList>
   </State>
   <Category>
-    <Name>States</Name>
+    <Name>ButtonTopColors</Name>
     <IsSetRecursively>false</IsSetRecursively>
     <State>
-      <Name>Hovered</Name>
+      <Name>Dark</Name>
       <Variable>
         <Type>int</Type>
         <Name>Description.Blue</Name>
-        <Value xsi:type="xsd:int">113</Value>
+        <Value xsi:type="xsd:int">37</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
         <Name>Description.Green</Name>
-        <Value xsi:type="xsd:int">91</Value>
+        <Value xsi:type="xsd:int">37</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
         <Name>Description.Red</Name>
-        <Value xsi:type="xsd:int">181</Value>
+        <Value xsi:type="xsd:int">37</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>GreyTop.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Light</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>Description.Blue</Name>
+        <Value xsi:type="xsd:int">49</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>Description.Green</Name>
+        <Value xsi:type="xsd:int">66</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>Description.Red</Name>
+        <Value xsi:type="xsd:int">142</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -673,6 +715,13 @@
         <Value xsi:type="xsd:boolean">false</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>ButtonElevationState</Name>
+    <IsSetRecursively>false</IsSetRecursively>
+    <State>
+      <Name>Raised</Name>
       <Variable>
         <Type>float</Type>
         <Name>Side.Height</Name>
@@ -686,55 +735,9 @@
         <Category>Position</Category>
         <SetsValue>true</SetsValue>
       </Variable>
-      <VariableList xsi:type="VariableListSaveOfString">
-        <Type>string</Type>
-        <Name>Side.VariableReferences</Name>
-        <IsFile>false</IsFile>
-        <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
-        <Value>
-          <string>Height = 1 + Components/Button.SideColor.Height</string>
-        </Value>
-      </VariableList>
-      <VariableList xsi:type="VariableListSaveOfString">
-        <Type>string</Type>
-        <Name>Description.VariableReferences</Name>
-        <IsFile>false</IsFile>
-        <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
-        <Value />
-      </VariableList>
     </State>
     <State>
-      <Name>Pressed</Name>
-      <Variable>
-        <Type>int</Type>
-        <Name>Description.Blue</Name>
-        <Value xsi:type="xsd:int">37</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>Description.Green</Name>
-        <Value xsi:type="xsd:int">37</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>Description.Red</Name>
-        <Value xsi:type="xsd:int">37</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>bool</Type>
-        <Name>GreyTop.Visible</Name>
-        <Value xsi:type="xsd:boolean">false</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Height -</Name>
-        <Value xsi:type="xsd:float">4</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
+      <Name>Lowered</Name>
       <Variable>
         <Type>float</Type>
         <Name>Side.Height</Name>
@@ -747,132 +750,6 @@
         <Value xsi:type="xsd:float">4</Value>
         <SetsValue>true</SetsValue>
       </Variable>
-      <VariableList xsi:type="VariableListSaveOfString">
-        <Type>string</Type>
-        <Name>Side.VariableReferences</Name>
-        <IsFile>false</IsFile>
-        <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
-        <Value />
-      </VariableList>
-      <VariableList xsi:type="VariableListSaveOfString">
-        <Type>string</Type>
-        <Name>Description.VariableReferences</Name>
-        <IsFile>false</IsFile>
-        <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
-        <Value />
-      </VariableList>
-    </State>
-    <State>
-      <Name>Focused</Name>
-      <Variable>
-        <Type>int</Type>
-        <Name>Description.Blue</Name>
-        <Value xsi:type="xsd:int">37</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>Description.Green</Name>
-        <Value xsi:type="xsd:int">37</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>Description.Red</Name>
-        <Value xsi:type="xsd:int">37</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>bool</Type>
-        <Name>GreyTop.Visible</Name>
-        <Value xsi:type="xsd:boolean">true</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Side.Height</Name>
-        <Value xsi:type="xsd:float">5</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Y</Name>
-        <Value xsi:type="xsd:float">0</Value>
-        <Category>Position</Category>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <VariableList xsi:type="VariableListSaveOfString">
-        <Type>string</Type>
-        <Name>Side.VariableReferences</Name>
-        <IsFile>false</IsFile>
-        <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
-        <Value>
-          <string>Height = 1 + Components/Button.SideColor.Height</string>
-        </Value>
-      </VariableList>
-      <VariableList xsi:type="VariableListSaveOfString">
-        <Type>string</Type>
-        <Name>Description.VariableReferences</Name>
-        <IsFile>false</IsFile>
-        <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
-        <Value />
-      </VariableList>
-    </State>
-    <State>
-      <Name>Disabled</Name>
-      <Variable>
-        <Type>int</Type>
-        <Name>Description.Blue</Name>
-        <Value xsi:type="xsd:int">37</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>Description.Green</Name>
-        <Value xsi:type="xsd:int">37</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>Description.Red</Name>
-        <Value xsi:type="xsd:int">37</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>bool</Type>
-        <Name>GreyTop.Visible</Name>
-        <Value xsi:type="xsd:boolean">true</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Side.Height</Name>
-        <Value xsi:type="xsd:float">5</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Y</Name>
-        <Value xsi:type="xsd:float">0</Value>
-        <Category>Position</Category>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <VariableList xsi:type="VariableListSaveOfString">
-        <Type>string</Type>
-        <Name>Side.VariableReferences</Name>
-        <IsFile>false</IsFile>
-        <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
-        <Value>
-          <string>Height = 1 + Components/Button.SideColor.Height</string>
-        </Value>
-      </VariableList>
-      <VariableList xsi:type="VariableListSaveOfString">
-        <Type>string</Type>
-        <Name>Description.VariableReferences</Name>
-        <IsFile>false</IsFile>
-        <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
-        <Value />
-      </VariableList>
     </State>
   </Category>
   <Instance>

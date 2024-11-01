@@ -3,6 +3,7 @@ using MonoGameGum.Forms;
 using MonoGameGum.GueDeriving;
 using RenderingLibrary;
 using MonoGameExperiments.GumUI.Components;
+using System.Text;
 
 namespace MonoGameExperiments.GumUI;
 
@@ -14,13 +15,13 @@ internal class GumSample(Manager manager) : DrawableGameComponent(manager)
     // is to create a ContainerRuntime and add it to the managers.
     ContainerRuntime Root;
 
+    ButtonRuntime _button;
+
     public override void Initialize()
     {
         SystemManagers.Default = new SystemManagers(); 
         SystemManagers.Default.Initialize(Game.GraphicsDevice, fullInstantiation: true);
         FormsUtilities.InitializeDefaults();
-
-        
 
         Root = new ContainerRuntime
         {
@@ -48,27 +49,38 @@ internal class GumSample(Manager manager) : DrawableGameComponent(manager)
             button.Text = $"Clicked {clickCount} times";
         };
 
-
-        var myButton = new ButtonRuntime
+        var text = "My Test Button";
+        _button = new ButtonRuntime
         {
             X = 150,
-            Y = 150,
-            Text = "My Test Button"
+            Y = 180,
+            Text = text
         };
-        Root.Children.Add(myButton);
+        Root.Children.Add(_button);
 
         base.Initialize();
     }
+
+    
 
     public override void Update(GameTime gameTime)
     {
         FormsUtilities.Update(gameTime, Root);
         SystemManagers.Default.Activity(gameTime.TotalGameTime.TotalSeconds);
+
+
     }
 
     public override void Draw(GameTime gameTime)
     {
         GraphicsDevice.Clear(Color.CornflowerBlue);
         SystemManagers.Default.Draw();
+        manager.SpriteBatch.Begin();
+        var text = new StringBuilder();
+        text.AppendLine(_button.ButtonElevationStateState.ToString());
+        text.AppendLine(_button.ButtonTopColorsState.ToString());
+        manager.SpriteBatch.DrawString(manager.Arial, text, 
+            new Vector2(150, 100), Color.White);
+        manager.SpriteBatch.End();
     }
 }   

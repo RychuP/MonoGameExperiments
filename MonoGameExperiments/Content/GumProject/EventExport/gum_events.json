@@ -1547,6 +1547,41 @@
         "ElementType": "Components",
         "EventType": 7,
         "TimestampUtc": "2024-11-01T03:18:11.6673647Z"
+      },
+      {
+        "NewName": "Styles (Container).HighlightColor",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-01T03:59:41.2635591Z"
+      },
+      {
+        "NewName": "Styles (Container).ColoredRectangleInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-01T04:00:19.1531686Z"
+      },
+      {
+        "NewName": "ButtonStates",
+        "OldName": "States",
+        "ElementType": "Components",
+        "EventType": 4,
+        "TimestampUtc": "2024-11-01T04:49:25.7207702Z"
+      },
+      {
+        "NewName": "ButtonTopColors",
+        "OldName": "ButtonStates",
+        "ElementType": "Components",
+        "EventType": 4,
+        "TimestampUtc": "2024-11-01T05:17:52.068435Z"
+      },
+      {
+        "NewName": "ButtonElevationState",
+        "OldName": "ButtonSideVisibility",
+        "ElementType": "Components",
+        "EventType": 4,
+        "TimestampUtc": "2024-11-01T05:19:37.2310666Z"
       }
     ]
   }

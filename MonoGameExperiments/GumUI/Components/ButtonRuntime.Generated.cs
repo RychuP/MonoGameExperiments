@@ -6,57 +6,65 @@ namespace MonoGameExperiments.GumUI.Components
 {
     public partial class ButtonRuntime:ContainerRuntime
     {
-        public enum States
+        public enum ButtonTopColors
         {
-            Hovered,
-            Pressed,
-            Focused,
-            Disabled,
+            Dark,
+            Light,
+        }
+        public enum ButtonElevationState
+        {
+            Raised,
+            Lowered,
         }
 
-        States mStatesState;
-        public States StatesState
+        ButtonTopColors mButtonTopColorsState;
+        public ButtonTopColors ButtonTopColorsState
         {
-            get => mStatesState;
+            get => mButtonTopColorsState;
             set
             {
-                mStatesState = value;
+                mButtonTopColorsState = value;
                 var appliedDynamically = false;
                 if(!appliedDynamically)
                 {
                     switch (value)
                     {
-                        case States.Hovered:
-                            this.Description.Blue = 113;
-                            this.Description.Green = 91;
-                            this.Description.Red = 181;
-                            this.GreyTop.Visible = false;
-                            this.Side.Height = 5f;
-                            this.Y = 0f;
-                            break;
-                        case States.Pressed:
+                        case ButtonTopColors.Dark:
                             this.Description.Blue = 37;
                             this.Description.Green = 37;
                             this.Description.Red = 37;
+                            this.GreyTop.Visible = true;
+                            break;
+                        case ButtonTopColors.Light:
+                            this.Description.Blue = 49;
+                            this.Description.Green = 66;
+                            this.Description.Red = 142;
                             this.GreyTop.Visible = false;
-                            this.Y = 4f;
+                            break;
+                    }
+                }
+            }
+        }
+
+        ButtonElevationState mButtonElevationStateState;
+        public ButtonElevationState ButtonElevationStateState
+        {
+            get => mButtonElevationStateState;
+            set
+            {
+                mButtonElevationStateState = value;
+                var appliedDynamically = false;
+                if(!appliedDynamically)
+                {
+                    switch (value)
+                    {
+                        case ButtonElevationState.Raised:
+                            this.Side.Height = 5f;
+                            this.Y = 0f;
+                            break;
+                        case ButtonElevationState.Lowered:
                             this.Side.Height = 1f;
-                            break;
-                        case States.Focused:
-                            this.Description.Blue = 37;
-                            this.Description.Green = 37;
-                            this.Description.Red = 37;
-                            this.GreyTop.Visible = true;
-                            this.Side.Height = 5f;
-                            this.Y = 0f;
-                            break;
-                        case States.Disabled:
-                            this.Description.Blue = 37;
-                            this.Description.Green = 37;
-                            this.Description.Red = 37;
-                            this.GreyTop.Visible = true;
-                            this.Side.Height = 5f;
-                            this.Y = 0f;
+                            this.Y = 4f;
                             break;
                     }
                 }
@@ -205,11 +213,11 @@ namespace MonoGameExperiments.GumUI.Components
             this.SideOutline.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Center;
             this.SideOutline.YUnits = GeneralUnitType.PixelsFromMiddle;
 
-            this.SideColor.Blue = 215;
-            this.SideColor.Green = 215;
+            this.SideColor.Blue = 175;
+            this.SideColor.Green = 175;
             this.SideColor.Height = 4f;
             this.SideColor.HeightUnits = global::Gum.DataTypes.DimensionUnitType.Absolute;
-            this.SideColor.Red = 215;
+            this.SideColor.Red = 175;
             this.SideColor.Width = -2f;
             this.SideColor.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToContainer;
             this.SideColor.X = 0f;
