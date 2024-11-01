@@ -10,6 +10,7 @@ using MonoGameExperiments.Extended.Graphics;
 using MonoGameExperiments.Extended.Input;
 using MonoGameExperiments.Extended.Screen;
 using MonoGameExperiments.Extended.Tweening;
+using MonoGameExperiments.GumUI;
 using MonoGameExperiments.SpriteSorting;
 
 namespace MonoGameExperiments;
@@ -37,26 +38,33 @@ public class Manager : Game
         InputManager.Keyboard.KeyPressed += (o, e) => { if (e.Key == Keys.Escape) Exit(); };
 
         // -- monogame experiments --
-        //Components.Add(new DrawingSample(this));
-        //Components.Add(new SpriteSortingSample(this));
+        //Test<DrawingSample>();
+        //Test<SpriteSortingSample>();
 
         // -- monogame extended experiments --
-        //Components.Add(new Texture2DRegionSample(this));
-        //Components.Add(new Texture2DRegionSample(this));
-        //Components.Add(new SpriteSample(this));
-        //Components.Add(new SpriteSample2(this));
-        //Components.Add(new SpritesheetSample(this));
-        //Components.Add(new AnimatedSpriteSample(this));
-        //Components.Add(new BitmapFontSample(this));
-        //Components.Add(new InputListenerSample(this));
-        //Components.Add(new MouseExtendedSample(this));
-        //Components.Add(new CameraSample(this));
-        //Components.Add(new ScreenManagementSample(this));
-        //Components.Add(new TweeningSample(this));
-        //Components.Add(new ColisionsSample(this));
-        Components.Add(new RainSimulator(this));
+        //Test<Texture2DRegionSample>();
+        //Test<Texture2DRegionSample>();
+        //Test<SpriteSample>();
+        //Test<SpriteSample2>();
+        //Test<SpritesheetSample>();
+        //Test<AnimatedSpriteSample>();
+        //Test<BitmapFontSample>();
+        //Test<InputListenerSample>();
+        //Test<MouseExtendedSample>();
+        //Test<CameraSample>();
+        //Test<ScreenManagementSample>();
+        //Test<TweeningSample>();
+        //Test<ColisionsSample>();
+        //Test<RainSimulator>();
+        Test<GumSample>();
 
         base.Initialize();
+    }
+
+    void Test<T>() where T : GameComponent
+    {
+        var component = Activator.CreateInstance(typeof(T), this) as GameComponent;
+        Components.Add(component);
     }
 
     protected override void LoadContent()
