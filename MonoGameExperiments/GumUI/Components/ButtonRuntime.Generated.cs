@@ -1,79 +1,81 @@
 //Code for Button (Container)
 using Gum.Converters;
 using MonoGameGum.GueDeriving;
+using MonoGameExperiments.GumUI.Components;
 
 namespace MonoGameExperiments.GumUI.Components
 {
     public partial class ButtonRuntime:ContainerRuntime
     {
-        public enum ButtonTopColors
+        public enum ButtonBrightness
         {
             Dark,
             Light,
         }
-        public enum ButtonElevationState
+        public enum ButtonElevation
         {
             Raised,
             Lowered,
         }
 
-        ButtonTopColors mButtonTopColorsState;
-        public ButtonTopColors ButtonTopColorsState
+        ButtonBrightness mButtonBrightnessState;
+        public ButtonBrightness ButtonBrightnessState
         {
-            get => mButtonTopColorsState;
+            get => mButtonBrightnessState;
             set
             {
-                mButtonTopColorsState = value;
+                mButtonBrightnessState = value;
                 var appliedDynamically = false;
                 if(!appliedDynamically)
                 {
                     switch (value)
                     {
-                        case ButtonTopColors.Dark:
+                        case ButtonBrightness.Dark:
                             this.Description.Blue = 37;
                             this.Description.Green = 37;
                             this.Description.Red = 37;
-                            this.GreyTop.Visible = true;
+                            this.TopGreySurface.Visible = true;
                             break;
-                        case ButtonTopColors.Light:
+                        case ButtonBrightness.Light:
                             this.Description.Blue = 49;
                             this.Description.Green = 66;
                             this.Description.Red = 142;
-                            this.GreyTop.Visible = false;
+                            this.TopGreySurface.Visible = false;
                             break;
                     }
                 }
             }
         }
 
-        ButtonElevationState mButtonElevationStateState;
-        public ButtonElevationState ButtonElevationStateState
+        ButtonElevation mButtonElevationState;
+        public ButtonElevation ButtonElevationState
         {
-            get => mButtonElevationStateState;
+            get => mButtonElevationState;
             set
             {
-                mButtonElevationStateState = value;
+                mButtonElevationState = value;
                 var appliedDynamically = false;
                 if(!appliedDynamically)
                 {
                     switch (value)
                     {
-                        case ButtonElevationState.Raised:
-                            this.Side.Height = 5f;
-                            this.Y -= 4;
+                        case ButtonElevation.Raised:
+                            this.Side.Visible = true;
+                            this.Top.Y = 0f;
                             break;
-                        case ButtonElevationState.Lowered:
-                            this.Side.Height = 1f;
-                            this.Y += 4;
+                        case ButtonElevation.Lowered:
+                            this.Side.Visible = false;
+                            this.Top.Y = 4f;
                             break;
                     }
                 }
             }
         }
+        public ContainerRuntime Top { get; protected set; }
         public ContainerRuntime Side { get; protected set; }
-        public ColoredRectangleRuntime Outline { get; protected set; }
-        public ColoredRectangleRuntime WhiteTop { get; protected set; }
-        public ColoredRectangleRuntime GreyTop { get; protected set; }
+        public ColoredRectangleRuntime TopOutline { get; protected set; }
+        public ColoredRectangleRuntime TopWhiteSurface { get; protected set; }
+        public ColoredRectangleRuntime TopGreySurface { get; protected set; }
         public TextRuntime Description { get; protected set; }
         public ColoredRectangleRuntime SideOutline { get; protected set; }
         public ColoredRectangleRuntime SideColor { get; protected set; }
@@ -84,37 +86,35 @@ namespace MonoGameExperiments.GumUI.Components
             set => Description.Text = value;
         }
 
-        public ButtonRuntime(bool fullInstantiation = true)
+        public ButtonRuntime(bool fullInstantiation = true, bool tryCreateFormsObject = true)
         {
             if(fullInstantiation)
             {
-
-                this.Height = 16f;
+                this.Height = 0f;
                 this.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToChildren;
                  
-                this.Width = 60f;
+                this.Width = 0f;
                 this.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToChildren;
 
                 InitializeInstances();
 
-                if(fullInstantiation)
-                {
-                    ApplyDefaultVariables();
-                }
+                ApplyDefaultVariables();
                 AssignParents();
                 CustomInitialize();
             }
         }
         protected virtual void InitializeInstances()
         {
+            Top = new ContainerRuntime();
+            Top.Name = "Top";
             Side = new ContainerRuntime();
             Side.Name = "Side";
-            Outline = new ColoredRectangleRuntime();
-            Outline.Name = "Outline";
-            WhiteTop = new ColoredRectangleRuntime();
-            WhiteTop.Name = "WhiteTop";
-            GreyTop = new ColoredRectangleRuntime();
-            GreyTop.Name = "GreyTop";
+            TopOutline = new ColoredRectangleRuntime();
+            TopOutline.Name = "TopOutline";
+            TopWhiteSurface = new ColoredRectangleRuntime();
+            TopWhiteSurface.Name = "TopWhiteSurface";
+            TopGreySurface = new ColoredRectangleRuntime();
+            TopGreySurface.Name = "TopGreySurface";
             Description = new TextRuntime();
             Description.Name = "Description";
             SideOutline = new ColoredRectangleRuntime();
@@ -124,16 +124,22 @@ namespace MonoGameExperiments.GumUI.Components
         }
         protected virtual void AssignParents()
         {
+            this.Children.Add(Top);
             this.Children.Add(Side);
-            this.Children.Add(Outline);
-            this.Children.Add(WhiteTop);
-            this.Children.Add(GreyTop);
-            this.Children.Add(Description);
+            Top.Children.Add(TopOutline);
+            Top.Children.Add(TopWhiteSurface);
+            Top.Children.Add(TopGreySurface);
+            Top.Children.Add(Description);
             Side.Children.Add(SideOutline);
             Side.Children.Add(SideColor);
         }
         private void ApplyDefaultVariables()
         {
+            this.Top.Height = 16f;
+            this.Top.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToChildren;
+            this.Top.Width = 60f;
+            this.Top.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToChildren;
+
             this.Side.Height = 5f;
             this.Side.HeightUnits = global::Gum.DataTypes.DimensionUnitType.Absolute;
             this.Side.Width = 0f;
@@ -141,49 +147,49 @@ namespace MonoGameExperiments.GumUI.Components
             this.Side.X = 0f;
             this.Side.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
             this.Side.XUnits = GeneralUnitType.PixelsFromMiddle;
-            this.Side.Y = 0f;
+            this.Side.Y = -1f;
             this.Side.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
             this.Side.YUnits = GeneralUnitType.PixelsFromLarge;
 
-            this.Outline.Blue = 40;
-            this.Outline.Green = 41;
-            this.Outline.Height = 0f;
-            this.Outline.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToContainer;
-            this.Outline.Red = 41;
-            this.Outline.Width = 0f;
-            this.Outline.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToContainer;
-            this.Outline.X = 0f;
-            this.Outline.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
-            this.Outline.XUnits = GeneralUnitType.PixelsFromMiddle;
-            this.Outline.Y = 0f;
-            this.Outline.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Center;
-            this.Outline.YUnits = GeneralUnitType.PixelsFromMiddle;
+            this.TopOutline.Blue = 40;
+            this.TopOutline.Green = 41;
+            this.TopOutline.Height = 0f;
+            this.TopOutline.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToContainer;
+            this.TopOutline.Red = 41;
+            this.TopOutline.Width = 0f;
+            this.TopOutline.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToContainer;
+            this.TopOutline.X = 0f;
+            this.TopOutline.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
+            this.TopOutline.XUnits = GeneralUnitType.PixelsFromMiddle;
+            this.TopOutline.Y = 0f;
+            this.TopOutline.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Center;
+            this.TopOutline.YUnits = GeneralUnitType.PixelsFromMiddle;
 
-            this.WhiteTop.Height = -1f;
-            this.WhiteTop.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToContainer;
-            this.WhiteTop.Width = -2f;
-            this.WhiteTop.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToContainer;
-            this.WhiteTop.X = 0f;
-            this.WhiteTop.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
-            this.WhiteTop.XUnits = GeneralUnitType.PixelsFromMiddle;
-            this.WhiteTop.Y = 1f;
-            this.WhiteTop.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
-            this.WhiteTop.YUnits = GeneralUnitType.PixelsFromSmall;
+            this.TopWhiteSurface.Height = -2f;
+            this.TopWhiteSurface.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToContainer;
+            this.TopWhiteSurface.Width = -2f;
+            this.TopWhiteSurface.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToContainer;
+            this.TopWhiteSurface.X = 0f;
+            this.TopWhiteSurface.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
+            this.TopWhiteSurface.XUnits = GeneralUnitType.PixelsFromMiddle;
+            this.TopWhiteSurface.Y = 1f;
+            this.TopWhiteSurface.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
+            this.TopWhiteSurface.YUnits = GeneralUnitType.PixelsFromSmall;
 
-            this.GreyTop.Blue = 232;
-            this.GreyTop.Green = 232;
-            this.GreyTop.Height = -3f;
-            this.GreyTop.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToContainer;
-            this.GreyTop.Red = 232;
-            this.GreyTop.Visible = true;
-            this.GreyTop.Width = -4f;
-            this.GreyTop.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToContainer;
-            this.GreyTop.X = 0f;
-            this.GreyTop.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
-            this.GreyTop.XUnits = GeneralUnitType.PixelsFromMiddle;
-            this.GreyTop.Y = 2f;
-            this.GreyTop.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
-            this.GreyTop.YUnits = GeneralUnitType.PixelsFromSmall;
+            this.TopGreySurface.Blue = 232;
+            this.TopGreySurface.Green = 232;
+            this.TopGreySurface.Height = -4f;
+            this.TopGreySurface.HeightUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToContainer;
+            this.TopGreySurface.Red = 232;
+            this.TopGreySurface.Visible = true;
+            this.TopGreySurface.Width = -4f;
+            this.TopGreySurface.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToContainer;
+            this.TopGreySurface.X = 0f;
+            this.TopGreySurface.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
+            this.TopGreySurface.XUnits = GeneralUnitType.PixelsFromMiddle;
+            this.TopGreySurface.Y = 2f;
+            this.TopGreySurface.YOrigin = global::RenderingLibrary.Graphics.VerticalAlignment.Top;
+            this.TopGreySurface.YUnits = GeneralUnitType.PixelsFromSmall;
 
             this.Description.Blue = 37;
             this.Description.FontSize = 32;

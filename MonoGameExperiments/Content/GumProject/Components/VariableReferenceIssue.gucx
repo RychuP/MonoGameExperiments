@@ -19,7 +19,7 @@
     <Variable>
       <Type>float</Type>
       <Name>BottomRect.Height</Name>
-      <Value xsi:type="xsd:float">43</Value>
+      <Value xsi:type="xsd:float">35</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -121,7 +121,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Content.Y</Name>
-      <Value xsi:type="xsd:float">43</Value>
+      <Value xsi:type="xsd:float">31</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -173,7 +173,7 @@
       <IsFile>false</IsFile>
       <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
       <Value>
-        <string>Y = Components/VariableReferenceIssue.BottomRect.Height</string>
+        <string>Y = -30 + Components/VariableReferenceIssue.BottomRect.Height * 2</string>
       </Value>
     </VariableList>
   </State>

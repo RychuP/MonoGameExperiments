@@ -9,6 +9,10 @@ namespace MonoGameExperiments.GumUI.Screens
         {
             Children.Add(Background);
             Children.Add(ButtonInstance);
+            Width = 0;
+            Height = 0;
+            WidthUnits = Gum.DataTypes.DimensionUnitType.RelativeToContainer;
+            HeightUnits = Gum.DataTypes.DimensionUnitType.RelativeToContainer;
         }
     }
 }

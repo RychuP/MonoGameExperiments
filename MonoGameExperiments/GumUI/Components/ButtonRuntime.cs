@@ -12,14 +12,8 @@ partial class ButtonRuntime : ContainerRuntime
         RollOff += (o, e) => SetDarkButtonColors();
     }
 
-    void ChangeButtonElevation(ButtonElevationState state)
-    {
-        ButtonElevationStateState = state;
-        //Y += 180;
-    }
-
-    public void LowerButtonDown() => ChangeButtonElevation(ButtonElevationState.Lowered);
-    public void RaiseButtonUp() => ChangeButtonElevation(ButtonElevationState.Raised);
-    public void SetDarkButtonColors() => ButtonTopColorsState = ButtonTopColors.Dark;
-    public void SetLightButtonColors() => ButtonTopColorsState = ButtonTopColors.Light;
+    public void LowerButtonDown() => ButtonElevationState = ButtonElevation.Lowered;
+    public void RaiseButtonUp() => ButtonElevationState = ButtonElevation.Raised;
+    public void SetDarkButtonColors() => ButtonBrightnessState = ButtonBrightness.Dark;
+    public void SetLightButtonColors() => ButtonBrightnessState = ButtonBrightness.Light;
 }

@@ -1582,6 +1582,531 @@
         "ElementType": "Components",
         "EventType": 4,
         "TimestampUtc": "2024-11-01T05:19:37.2310666Z"
+      },
+      {
+        "NewName": "Button (Container).ContainerInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-02T23:01:18.818914Z"
+      },
+      {
+        "NewName": "Button (Container).TopSide",
+        "OldName": "Button (Container).ContainerInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:01:41.2438243Z"
+      },
+      {
+        "NewName": "Button (Container).TopSide",
+        "OldName": "Button (Container).ContainerInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:01:41.247815Z"
+      },
+      {
+        "NewName": "Button (Container).TopSide",
+        "OldName": "Button (Container).ContainerInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:01:41.2597817Z"
+      },
+      {
+        "NewName": "Button (Container).TopSide",
+        "OldName": "Button (Container).ContainerInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:01:41.2697548Z"
+      },
+      {
+        "NewName": "Button (Container).TopSide",
+        "OldName": "Button (Container).ContainerInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:01:41.2807255Z"
+      },
+      {
+        "NewName": "Button (Container).BottomSide",
+        "OldName": "Button (Container).Side",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:01:56.3023312Z"
+      },
+      {
+        "NewName": "Button (Container).BottomSide",
+        "OldName": "Button (Container).Side",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:01:56.3053233Z"
+      },
+      {
+        "NewName": "Button (Container).BottomSide",
+        "OldName": "Button (Container).Side",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:01:56.3152966Z"
+      },
+      {
+        "NewName": "Button (Container).BottomSide",
+        "OldName": "Button (Container).Side",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:01:56.3262743Z"
+      },
+      {
+        "NewName": "Button (Container).BottomSide",
+        "OldName": "Button (Container).Side",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:01:56.3378515Z"
+      },
+      {
+        "NewName": "Button (Container).Top",
+        "OldName": "Button (Container).TopSide",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:04:14.7809325Z"
+      },
+      {
+        "NewName": "Button (Container).Top",
+        "OldName": "Button (Container).TopSide",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:04:14.7839277Z"
+      },
+      {
+        "NewName": "Button (Container).Top",
+        "OldName": "Button (Container).TopSide",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:04:14.7940683Z"
+      },
+      {
+        "NewName": "Button (Container).Top",
+        "OldName": "Button (Container).TopSide",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:04:14.8050403Z"
+      },
+      {
+        "NewName": "Button (Container).Top",
+        "OldName": "Button (Container).TopSide",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:04:14.8299701Z"
+      },
+      {
+        "NewName": "Button (Container).Side",
+        "OldName": "Button (Container).BottomSide",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:04:20.9822102Z"
+      },
+      {
+        "NewName": "Button (Container).Side",
+        "OldName": "Button (Container).BottomSide",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:04:20.9852059Z"
+      },
+      {
+        "NewName": "Button (Container).Side",
+        "OldName": "Button (Container).BottomSide",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:04:20.9951777Z"
+      },
+      {
+        "NewName": "Button (Container).Side",
+        "OldName": "Button (Container).BottomSide",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:04:21.0091498Z"
+      },
+      {
+        "NewName": "Button (Container).Side",
+        "OldName": "Button (Container).BottomSide",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:04:21.0191349Z"
+      },
+      {
+        "NewName": "Button (Container).TopOutline",
+        "OldName": "Button (Container).Outline",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:04:49.0860817Z"
+      },
+      {
+        "NewName": "Button (Container).TopOutline",
+        "OldName": "Button (Container).Outline",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:04:49.0880722Z"
+      },
+      {
+        "NewName": "Button (Container).TopOutline",
+        "OldName": "Button (Container).Outline",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:04:49.1020557Z"
+      },
+      {
+        "NewName": "Button (Container).TopOutline",
+        "OldName": "Button (Container).Outline",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:04:49.1120081Z"
+      },
+      {
+        "NewName": "Button (Container).TopOutline",
+        "OldName": "Button (Container).Outline",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:04:49.1229802Z"
+      },
+      {
+        "NewName": "Button (Container).TopWhiteSurface",
+        "OldName": "Button (Container).WhiteTop",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:05:21.4982113Z"
+      },
+      {
+        "NewName": "Button (Container).TopWhiteSurface",
+        "OldName": "Button (Container).WhiteTop",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:05:21.5012026Z"
+      },
+      {
+        "NewName": "Button (Container).TopWhiteSurface",
+        "OldName": "Button (Container).WhiteTop",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:05:21.5131706Z"
+      },
+      {
+        "NewName": "Button (Container).TopWhiteSurface",
+        "OldName": "Button (Container).WhiteTop",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:05:21.5301573Z"
+      },
+      {
+        "NewName": "Button (Container).TopWhiteSurface",
+        "OldName": "Button (Container).WhiteTop",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:05:21.5341162Z"
+      },
+      {
+        "NewName": "Button (Container).TopGreySurface",
+        "OldName": "Button (Container).GreyTop",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:05:31.8062966Z"
+      },
+      {
+        "NewName": "Button (Container).TopGreySurface",
+        "OldName": "Button (Container).GreyTop",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:05:31.8092863Z"
+      },
+      {
+        "NewName": "Button (Container).TopGreySurface",
+        "OldName": "Button (Container).GreyTop",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:05:31.8201691Z"
+      },
+      {
+        "NewName": "Button (Container).TopGreySurface",
+        "OldName": "Button (Container).GreyTop",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:05:31.8321369Z"
+      },
+      {
+        "NewName": "Button (Container).TopGreySurface",
+        "OldName": "Button (Container).GreyTop",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:05:31.8460995Z"
+      },
+      {
+        "NewName": "Button (Container).TopName",
+        "OldName": "Button (Container).Description",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:05:41.4012416Z"
+      },
+      {
+        "NewName": "Button (Container).TopName",
+        "OldName": "Button (Container).Description",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:05:41.4042347Z"
+      },
+      {
+        "NewName": "Button (Container).TopName",
+        "OldName": "Button (Container).Description",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:05:41.4171996Z"
+      },
+      {
+        "NewName": "Button (Container).TopName",
+        "OldName": "Button (Container).Description",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:05:41.4351519Z"
+      },
+      {
+        "NewName": "Button (Container).TopName",
+        "OldName": "Button (Container).Description",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:05:41.4471195Z"
+      },
+      {
+        "NewName": "Button (Container).ButtonName",
+        "OldName": "Button (Container).TopName",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:05:53.8415569Z"
+      },
+      {
+        "NewName": "Button (Container).ButtonName",
+        "OldName": "Button (Container).TopName",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:05:53.843554Z"
+      },
+      {
+        "NewName": "Button (Container).ButtonName",
+        "OldName": "Button (Container).TopName",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:05:53.8555197Z"
+      },
+      {
+        "NewName": "Button (Container).ButtonName",
+        "OldName": "Button (Container).TopName",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:05:53.8655141Z"
+      },
+      {
+        "NewName": "Button (Container).ButtonName",
+        "OldName": "Button (Container).TopName",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:05:53.8754676Z"
+      },
+      {
+        "NewName": "Button (Container).Description",
+        "OldName": "Button (Container).ButtonName",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:06:13.455717Z"
+      },
+      {
+        "NewName": "Button (Container).Description",
+        "OldName": "Button (Container).ButtonName",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:06:13.4587112Z"
+      },
+      {
+        "NewName": "Button (Container).Description",
+        "OldName": "Button (Container).ButtonName",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:06:13.4696833Z"
+      },
+      {
+        "NewName": "Button (Container).Description",
+        "OldName": "Button (Container).ButtonName",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:06:13.4796665Z"
+      },
+      {
+        "NewName": "Button (Container).Description",
+        "OldName": "Button (Container).ButtonName",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:06:13.4896344Z"
+      },
+      {
+        "NewName": "MenuScreen",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 0,
+        "TimestampUtc": "2024-11-02T23:44:19.0891151Z"
+      },
+      {
+        "NewName": "MenuScreen.ColoredRectangleInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-02T23:44:28.5146774Z"
+      },
+      {
+        "NewName": "MenuScreen.Background",
+        "OldName": "MenuScreen.ColoredRectangleInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:44:39.6951844Z"
+      },
+      {
+        "NewName": "MenuScreen.TextInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-02T23:45:09.0096239Z"
+      },
+      {
+        "NewName": "MenuEntry",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2024-11-02T23:47:10.4944734Z"
+      },
+      {
+        "NewName": "MenuEntry (Container).ColoredRectangleInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-02T23:47:15.4512288Z"
+      },
+      {
+        "NewName": "MenuEntry (Container).TextInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-02T23:47:19.3583411Z"
+      },
+      {
+        "NewName": "MenuScreen.MenuEntryInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-02T23:49:42.2613383Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "MenuScreen.Text TextInstance in MenuScreen",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-02T23:50:22.2632943Z"
+      },
+      {
+        "NewName": "MenuScreen.ContainerInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-02T23:50:43.5005873Z"
+      },
+      {
+        "NewName": "MenuScreen.MenuEntryInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-02T23:51:47.9551889Z"
+      },
+      {
+        "NewName": "MenuEntry (Container).EntryText",
+        "OldName": "MenuEntry (Container).TextInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:57:04.0211881Z"
+      },
+      {
+        "NewName": "MenuEntry (Container).Description",
+        "OldName": "MenuEntry (Container).EntryText",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:57:40.2868409Z"
+      },
+      {
+        "NewName": "MenuEntry (Container).Background",
+        "OldName": "MenuEntry (Container).ColoredRectangleInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-02T23:57:47.6993462Z"
+      },
+      {
+        "NewName": "MenuScreen.ButtonInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-03T00:00:57.9110501Z"
+      },
+      {
+        "NewName": "ButtonSideState",
+        "OldName": "ButtonElevationState",
+        "ElementType": "Components",
+        "EventType": 4,
+        "TimestampUtc": "2024-11-03T01:50:22.1383979Z"
+      },
+      {
+        "NewName": "ButtonTopState",
+        "OldName": "ButtonTopColors",
+        "ElementType": "Components",
+        "EventType": 4,
+        "TimestampUtc": "2024-11-03T01:51:00.9011758Z"
+      },
+      {
+        "NewName": "ButtonBrightness",
+        "OldName": "ButtonTopState",
+        "ElementType": "Components",
+        "EventType": 4,
+        "TimestampUtc": "2024-11-03T01:59:29.222376Z"
+      },
+      {
+        "NewName": "ButtonElevation",
+        "OldName": "ButtonSideState",
+        "ElementType": "Components",
+        "EventType": 4,
+        "TimestampUtc": "2024-11-03T01:59:40.6631659Z"
+      },
+      {
+        "NewName": "MenuScreen.Title",
+        "OldName": "MenuScreen.MenuEntryInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-03T14:49:43.3993319Z"
+      },
+      {
+        "NewName": "MenuScreen.SubTitle",
+        "OldName": "MenuScreen.MenuEntryInstance1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-03T14:50:17.1872632Z"
+      },
+      {
+        "NewName": "MenuScreen.MainTitle",
+        "OldName": "MenuScreen.Title",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-03T14:50:24.3144809Z"
+      },
+      {
+        "NewName": "MenuScreen.TestButton",
+        "OldName": "MenuScreen.ButtonInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-03T14:50:42.2028551Z"
+      },
+      {
+        "NewName": "MenuScreen.SomeButton",
+        "OldName": "MenuScreen.TestButton",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-03T14:51:20.202063Z"
       }
     ]
   }

@@ -5,17 +5,16 @@ using RenderingLibrary;
 using MonoGameExperiments.GumUI.Components;
 using System.Text;
 using MonoGameExperiments.GumUI.Screens;
+using Microsoft.Xna.Framework.Input;
+using Gum.Wireframe;
 
 namespace MonoGameExperiments.GumUI;
 
 internal class GumSample(Manager manager) : DrawableGameComponent(manager)
 {
-    // Gum renders and updates using a hierarchy. At least
-    // one object must have its AddToManagers method called.
-    // If not loading from-file, then the easiest way to do this
-    // is to create a ContainerRuntime and add it to the managers.
-    ContainerRuntime Root;
-
+    MenuScreenRuntime MenuScreen;
+    TestScreenRuntime TestScreen;
+    ContainerRuntime _currentScreen;
     ButtonRuntime _button;
 
     public override void Initialize()
@@ -24,63 +23,80 @@ internal class GumSample(Manager manager) : DrawableGameComponent(manager)
         SystemManagers.Default.Initialize(Game.GraphicsDevice, fullInstantiation: true);
         FormsUtilities.InitializeDefaults();
 
-        Root = new TestScreenRuntime
-        {
-            Width = 0,
-            Height = 0,
-            WidthUnits = Gum.DataTypes.DimensionUnitType.RelativeToContainer,
-            HeightUnits = Gum.DataTypes.DimensionUnitType.RelativeToContainer
-        };
-        Root.AddToManagers();
-
+        MenuScreen = new MenuScreenRuntime();
+        TestScreen = new TestScreenRuntime();
+        ChangeScreen(MenuScreen);
 
         var button = new Button
         {
-            X = 50,
-            Y = 50,
+            X = 30,
+            Y = 30,
             Width = 100,
             Height = 50,
-            Text = "Hello MonoGame.Extended!"
+            Text = "Forms Button"
         };
-        Root.Children.Add(button.Visual);
         int clickCount = 0;
-        button.Click += (_, _) =>
+        button.Click += (o, e) =>
         {
             clickCount++;
             button.Text = $"Clicked {clickCount} times";
         };
+        TestScreen.Children.Add(button.Visual);
 
-        var text = "My Test Button";
         _button = new ButtonRuntime
         {
-            X = 150,
+            X = 30,
             Y = 180,
-            Text = text
+            Text = "My Test Button"
         };
-        Root.Children.Add(_button);
+        TestScreen.Children.Add(_button);
 
         base.Initialize();
     }
 
-    
+    void ChangeScreen(ContainerRuntime screen)
+    {
+        if (_currentScreen == screen) return;
+        _currentScreen?.RemoveFromManagers();
+        screen.AddToManagers();
+        _currentScreen = screen;
+    }
 
     public override void Update(GameTime gameTime)
     {
-        FormsUtilities.Update(gameTime, Root);
+        if (FormsUtilities.Keyboard.KeyPushed(Keys.D1))
+            ChangeScreen(MenuScreen);
+        else if (FormsUtilities.Keyboard.KeyPushed(Keys.D2))
+            ChangeScreen(TestScreen);
+
+        FormsUtilities.Update(gameTime, _currentScreen);
         SystemManagers.Default.Activity(gameTime.TotalGameTime.TotalSeconds);
-
-
     }
 
     public override void Draw(GameTime gameTime)
     {
         SystemManagers.Default.Draw();
-        manager.SpriteBatch.Begin();
-        var text = new StringBuilder();
-        text.AppendLine(_button.ButtonElevationStateState.ToString());
-        text.AppendLine(_button.ButtonTopColorsState.ToString());
-        manager.SpriteBatch.DrawString(manager.Arial, text, 
-            new Vector2(150, 100), Color.White);
-        manager.SpriteBatch.End();
+
+        if (_currentScreen is MenuScreenRuntime)
+        {
+            manager.SpriteBatch.Begin();
+            string text = $"Main Title RollOnCount: {MenuScreen.RollOnCount}";
+            var size = manager.Arial.MeasureString(text);
+            float x = (GraphicalUiElement.CanvasWidth - size.X) / 2;
+            Vector2 pos = new(x, 300);
+            manager.SpriteBatch.DrawString(manager.Arial, text, pos, Color.White);
+            manager.SpriteBatch.End();
+        }
+
+        else if (_currentScreen is TestScreenRuntime)
+        {
+            manager.SpriteBatch.Begin();
+            var text = new StringBuilder();
+            text.AppendLine(_button.ButtonElevationState.ToString());
+            text.AppendLine(_button.ButtonBrightnessState.ToString());
+            manager.SpriteBatch.DrawString(manager.Arial, text,
+                new Vector2(30, 100), Color.White);
+            manager.SpriteBatch.End();
+        }
     }
 }   

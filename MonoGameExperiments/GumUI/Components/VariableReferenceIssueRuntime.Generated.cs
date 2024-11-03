@@ -1,6 +1,7 @@
 //Code for VariableReferenceIssue (Container)
 using Gum.Converters;
 using MonoGameGum.GueDeriving;
+using MonoGameExperiments.GumUI.Components;
 
 namespace MonoGameExperiments.GumUI.Components
 {
@@ -51,7 +52,7 @@ namespace MonoGameExperiments.GumUI.Components
 
             this.BottomRect.Blue = 148;
             this.BottomRect.Green = 234;
-            this.BottomRect.Height = 43f;
+            this.BottomRect.Height = 35f;
             this.BottomRect.Red = 67;
             this.BottomRect.Width = 0f;
             this.BottomRect.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToContainer;
@@ -69,7 +70,7 @@ namespace MonoGameExperiments.GumUI.Components
             this.Content.WidthUnits = global::Gum.DataTypes.DimensionUnitType.RelativeToChildren;
             this.Content.XOrigin = global::RenderingLibrary.Graphics.HorizontalAlignment.Center;
             this.Content.XUnits = GeneralUnitType.PixelsFromMiddle;
-            this.Content.Y = 43f;
+            this.Content.Y = 31f;
 
         }
         partial void CustomInitialize();
